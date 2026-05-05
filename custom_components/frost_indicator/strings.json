@@ -1,0 +1,52 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Frost Indicator",
+        "description": "Point this at a weather entity and it will do the worrying for you.",
+        "data": {
+          "weather_entity": "Weather entity",
+          "frost_threshold": "Frost threshold"
+        },
+        "data_description": {
+          "weather_entity": "Whichever weather integration you trust most. Met Office, OpenWeatherMap, Met.no — they all work.",
+          "frost_threshold": "The temperature at which you start to worry. 0 for hard frost, 2 for courgettes."
+        }
+      }
+    },
+    "error": {
+      "weather_not_found": "That weather entity seems to have wandered off. Check it's set up correctly."
+    },
+    "abort": {
+      "already_configured": "You've already got a frost indicator watching this weather entity. One is plenty.",
+      "no_weather": "No weather integrations found. You'll need to set one up first — Met.no is free and takes about 30 seconds."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Frost Indicator Settings",
+        "description": "Adjust the temperature threshold. Your plants' tolerance may vary.",
+        "data": {
+          "frost_threshold": "Frost threshold"
+        },
+        "data_description": {
+          "frost_threshold": "Temperature at or below which frost is expected. Hardy perennials won't care. Your tomatoes absolutely will."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "frost_indicator": {
+        "name": "Frost indicator",
+        "state": {
+          "freezing_now": "Freezing now",
+          "frost_tonight": "Frost tonight",
+          "frost_soon": "Frost soon",
+          "clear": "Clear"
+        }
+      }
+    }
+  }
+}
