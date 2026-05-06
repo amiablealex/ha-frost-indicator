@@ -18,7 +18,6 @@ from .const import (
     ATTR_FORECAST_LOW,
     ATTR_FROST_DAYS,
     ATTR_FROST_THRESHOLD,
-    ATTR_LAST_UPDATED,
     ATTR_WEATHER_ENTITY,
     CONF_FROST_THRESHOLD,
     CONF_WEATHER_ENTITY,
@@ -110,11 +109,6 @@ class FrostIndicatorSensor(CoordinatorEntity[FrostIndicatorCoordinator], SensorE
                     ATTR_FORECAST_HOURS: data.forecast_hours_available,
                     ATTR_FORECAST_DAYS: data.forecast_days_available,
                 }
-            )
-
-        if self.coordinator.last_update_success_time:
-            attrs[ATTR_LAST_UPDATED] = (
-                self.coordinator.last_update_success_time.isoformat()
             )
 
         return attrs
