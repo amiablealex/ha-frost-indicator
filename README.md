@@ -1,5 +1,8 @@
 # Gardener's Frost Indicator for Home Assistant
 
+[![Validate](https://github.com/amiablealex/ha-frost-indicator/actions/workflows/validate.yml/badge.svg)](https://github.com/amiablealex/ha-frost-indicator/actions/workflows/validate.yml)
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-blue.svg)](https://github.com/hacs/integration)
+
 A Home Assistant integration that tells you if your plants are about to have a bad night.
 
 It reads forecast data from whatever weather integration you already have running and distils it down to one of four states: **Freezing now**, **Frost tonight**, **Frost soon**, or **Clear**. That's it. No dashboards, no graphs, no opinions on your mulching technique.
@@ -23,7 +26,18 @@ It does not call any external APIs. It does not need API keys. It reads data you
 
 ## Sensor attributes
 
-The sensor exposes forecast details as attributes for use in automations and templates: `current_temperature`, `forecast_low_temperature`, `first_frost_date`, `frost_days_count`, `frost_threshold`, `forecast_hours_available`, `forecast_days_available`, and `last_updated`.
+The sensor exposes these attributes for use in automations and templates:
+
+| Attribute | Description |
+|---|---|
+| `current_temperature` | Current temperature from the weather entity |
+| `forecast_low_temperature` | Lowest temperature across the entire forecast |
+| `first_frost_date` | ISO datetime of the first forecast frost |
+| `frost_days_count` | Number of days with frost in the forecast |
+| `frost_threshold` | Your configured threshold temperature |
+| `weather_entity` | The weather entity being monitored |
+| `forecast_hours_available` | How many hourly forecast entries were available |
+| `forecast_days_available` | How many daily forecast entries were available |
 
 ## Installation
 
